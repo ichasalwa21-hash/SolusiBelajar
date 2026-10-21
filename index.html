@@ -1,19 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiny Learn</title>
+    <title>SolusiDigital AI - Asisten Pintar Sehari-hari</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Inter & Google Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 <body>
-    <div class="card">
-        <h1>Quick Learn</h1>
-        <p id="fact">HTML is the standard markup language for Web pages.</p>
-        <button onclick="nextFact()">Next Fact</button>
-    </div>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="logo-area">
+            <span class="material-icons-round logo-icon">auto_awesome</span>
+            <h1>SolusiDigital AI</h1>
+        </div>
+        <p class="tagline">Asisten kecerdasan artifisial untuk memudahkan kehidupan sehari-hari Anda.</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Menu Navigasi Modul -->
+        <nav class="module-nav">
+            <button class="nav-btn active" onclick="switchModule('resep')">
+                <span class="material-icons-round">kitchen</span>Resep Bahan Sisa
+            </button>
+            <button class="nav-btn" onclick="switchModule('jadwal')">
+                <span class="material-icons-round">schedule</span>Jadwal Harian
+            </button>
+            <button class="nav-btn" onclick="switchModule('solusi')">
+                <span class="material-icons-round">lightbulb</span>Solusi Cepat
+            </button>
+            <button class="nav-btn" onclick="switchModule('chat')">
+                <span class="material-icons-round">chat</span>Tanya AI Langsung
+            </button>
+        </nav>
+
+        <!-- Modul 1: Resep Bahan Sisa -->
+        <section id="module-resep" class="module-card active">
+            <h2>Penyelamat Makanan Sisa (Kulkas Pintar)</h2>
+            <p>Masukkan bahan makanan atau sisa bahan yang ada di kulkas Anda, AI akan meracik ide masakan praktis.</p>
+            <div class="input-group">
+                <input type="text" id="resep-input" placeholder="Contoh: Nasi dingin, telur, kecap, bawang merah...">
+                <button onclick="generateResep()">Rekomendasikan Resep</button>
+            </div>
+            <div id="resep-output" class="output-box hidden"></div>
+        </section>
+
+        <!-- Modul 2: Jadwal Harian -->
+        <section id="module-jadwal" class="module-card hidden">
+            <h2>Optimasi Jadwal Harian</h2>
+            <p>Beritahu aktivitas atau target Anda hari ini, AI bantu susun time-blocking yang seimbang.</p>
+            <div class="input-group">
+                <input type="text" id="jadwal-input" placeholder="Contoh: Kuliah jam 8 pagi, kerja tugas, olahraga sore, waktu santai.">
+                <button onclick="generateJadwal()">Buat Jadwal</button>
+            </div>
+            <div id="jadwal-output" class="output-box hidden"></div>
+        </section>
+
+        <!-- Modul 3: Solusi Cepat -->
+        <section id="module-solusi" class="module-card hidden">
+            <h2>Pusat Solusi Rumah Tangga & Teknologi</h2>
+            <p>Punya masalah kecil di rumah atau bingung pakai aplikasi? Tanyakan masalah Anda di sini.</p>
+            <div class="input-group">
+                <input type="text" id="solusi-input" placeholder="Contoh: Bagaimana cara menghilangkan noda tinta di baju putih?">
+                <button onclick="generateSolusi()">Cari Solusi</button>
+            </div>
+            <div id="solusi-output" class="output-box hidden"></div>
+        </section>
+
+        <!-- Modul 4: Tanya AI Langsung (Chat) -->
+        <section id="module-chat" class="module-card hidden">
+            <h2>Chat Asisten SolusiDigital</h2>
+            <p>Ngobrol langsung dengan AI untuk berbagai kebutuhan bantuan harian Anda.</p>
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message ai-msg">Halo! Ada hal sehari-hari yang ingin saya bantu hari ini?</div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Ketik pesan atau pertanyaan..." onkeypress="handleChatKey(event)">
+                    <button onclick="sendChatMessage()"><span class="material-icons-round">send</span></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SolusiDigital AI. Dibangun dengan Semangat Produktivitas Harian.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-                    }
