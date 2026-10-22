@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <html lang="id">
+    <head>
+      <meta charset= "UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IF=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Daily Life with AI</title>
+<link rel="stylesheet" href="style.css">
+  </head>
+  <body class="dark-theme">
+
+    <div class="container">
+      <div class="header">
+        <button id="themeToggle" onclick="toggleTheme()">☀️ Mode Terang</button>
+      </div>
+
+      <div class="card">
+        <h2>Asisten Solusi Harian</h2>
+        <p>Pilih kondisi Anda saat ini untuk mendapatkan saran kegiatan terbaik:</p>
+
+        <label for="moodSelect">Kondisi / Mood Anda:</label>
+        <select id="moodSelect">
+          <option value="" disabled selected>-- Pilih Kondisi --</option>
+          <option value="lelah">😴 Lelah / Butuh Istirahat</option>
+          <option value="produktif">🔥 Semangat & Produktif</option>
+          <option value="bosan">🥱 Bosan / Jenuh</option>
+          <option value="stres">🤯 Stres / Banyak Pikiran</option>
+        </select>
+
+        <button class="btn-primary" onclick="dapatkanSaranAI()">Minta Rekomendasi AI</button>
+
+        <div id="aiResult" class="result-box hidden">
+          <h3 id="resultTitle">Rekomendasi AI:</h3>
+          <p id="resultText">-</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Daftar Kegiatan Harian</h2>
+        <div class="input-group">
+          <input type="text" id="taskInput" placeholder="Tambah kegiatan baru...">
+          <button onclick="tambahTugas()">Tambah</button>
+        </div>
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
