@@ -37,18 +37,18 @@
 
       <section class="features">
     <div class="container">
-        <h2>Solusi Digital Kami</h2>
+        <h2>Yuk Kami Bantu!</h2>
         <div class="feature-grid">
             <div class="feature-box">
-                <h3>Manajemen Waktu</h3>
-                <p>AI menyusun jadwal harian Anda secara otomatis.</p>
+                <h3>Jadwal Harian</h3>
+                <p>menyusun jadwal harian Anda secara otomatis.</p>
             </div>
             <div class="feature-box">
-                <h3>Nutrisi Sehat</h3>
+                <h3>Tips Makanan Dengan Nutrisi</h3>
                 <p>Rekomendasi menu makanan harian dengan mudah.</p>
             </div>
             <div class="feature-box">
-                <h3>Keuangan Pintar</h3>
+                <h3>Mau Melakukan Apa Hari Ini?</h3>
                 <p>Catat dan kelola pengeluaran harian lewat AI.</p>
             </div>
 
@@ -61,6 +61,26 @@
         <ul id="taskList"></ul>
       </div>
     </div>
+
+     <section class="demo" id="demo">
+        <div class="container">
+            <div class="demo-box">
+                <div class="demo-header">
+                    <h3>Simulasi Asisten AI Harian</h3>
+                    <p>Pilih topik di bawah ini untuk melihat contoh respon instant dari AI:</p>
+                </div>
+                <div class="demo-buttons">
+                    <button class="demo-btn active" onclick="getAISuggestion('jadwal')">🗓️ Jadwal Harian</button>
+                    <button class="demo-btn" onclick="getAISuggestion('makan')">🥗 Menu Makan Siang</button>
+                    <button class="demo-btn" onclick="getAISuggestion('hemat')">💡 Tips Hemat Hari Ini</button>
+                </div>
+                <div class="demo-output" id="demo-output">
+                    <i class="fa-solid fa-spinner fa-spin loading-icon" id="loading" style="display: none;"></i>
+                    <p id="demo-text">Klik salah satu tombol di atas untuk melihat bagaimana AI memproses permintaan Anda secara langsung!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
   </body>
