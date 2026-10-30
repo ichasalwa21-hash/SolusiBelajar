@@ -80,7 +80,7 @@ const daftarMateri = [
         deskripsi: 'Perhitungan PDB (GDP), Pendapatan Per Kapita, dan indeks harga.',
         konsep: 'Pendapatan nasional mengukur total nilai barang/jasa yang dihasilkan suatu negara dalam 1 tahun.',
         rumus: 'Metode Pengeluaran: Y = C + I + G + (X - M)\nC=Konsumsi, I=Investasi, G=Pemerintah, X=Ekspor, M=Impor',
-        tips: 'Ingat rumus metode pengeluaran dengan singkatan **CIG-XM**.'
+        tips: 'Ingat rumus metode pengeluaran dengan singkatan CIG-XM.'
     },
 
     // KELAS 12
@@ -118,24 +118,24 @@ const daftarMateri = [
         id: 12,
         kelas: '12',
         mapel: 'Sejarah',
-        judul: 'Proklamasi & Perjuangan Mempertahankan Kemerdekaan',
+        judul: 'Proklamasi & Perjuangan Diplomasi',
         deskripsi: 'Peristiwa Rengasdengklok, Perjanjian Linggarjati, Renville, hingga KMB.',
         konsep: 'Upaya mempertahankan kemerdekaan dilakukan melalui dua jalur: Perjuangan Fisik dan Diplomasi.',
         rumus: 'Jalur Diplomasi Utama: Linggarjati (1947) -> Renville (1948) -> Roem-Royen (1949) -> KMB (1949)',
-        tips: 'Hafalkan urutan diplomasi dengan singkatan **Li-Ren-Ro-KMB**.'
+        tips: 'Hafalkan urutan diplomasi dengan singkatan Li-Ren-Ro-KMB.'
     }
+];
 
-    function renderMateri(data) {
+function renderMateri(data) {
     const container = document.getElementById('materi-grid');
     if (!container) return;
 
-    container.innerHTML = ''; // Kosongkan container
+    container.innerHTML = '';
 
     data.forEach(item => {
         const card = document.createElement('div');
         card.className = `materi-card kelas-${item.kelas} bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-6 shadow-sm relative flex flex-col justify-between`;
         
-
         let badgeColor = 'bg-blue-100 text-blue-700';
         if (item.kelas === '11') badgeColor = 'bg-emerald-100 text-emerald-700';
         if (item.kelas === '12') badgeColor = 'bg-purple-100 text-purple-700';
@@ -161,10 +161,9 @@ const daftarMateri = [
     if (window.lucide) lucide.createIcons();
 }
 
-unction escapeHtml(text) {
+function escapeHtml(text) {
     return text.replace(/'/g, "\\'").replace(/\n/g, '\\n');
 }
-
 
 function filterKelas(kelas) {
     if (kelas === 'all') {
@@ -203,7 +202,6 @@ function openModal(title, badge, concept, formula, tips) {
 function closeModal() {
     document.getElementById('summary-modal').classList.add('hidden');
 }
-
 
 let timeLeft = 25 * 60;
 let timerId = null;
