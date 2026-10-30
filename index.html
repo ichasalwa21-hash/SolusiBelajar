@@ -4,61 +4,177 @@
       <meta charset= "UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IF=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Daily Life with AI</title>
+      <title>SolusiBelajar</title>
 <link rel="stylesheet" href="style.css">
   </head>
   <body class="dark-theme">
 
-    <div class="container">
-      <div class="header">
-        <button id="themeToggle" onclick="toggleTheme()">☀️ Mode Terang</button>
-      </div>
+    <header class="bg-indigo-600 text-white sticky top-0 z-40 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="book-open" class="w-8 h-8 text-yellow-300"></i>
+                <span class="font-bold text-xl tracking-tight">SolusiBelajar</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#materi" class="hover:text-yellow-300 transition-colors">Materi SMA</a>
+                <a href="#planner" class="hover:text-yellow-300 transition-colors">Study Planner</a>
+                <a href="#kuis" class="hover:text-yellow-300 transition-colors">Bank Soal</a>
+            </nav>
 
-      <div class="card">
-        <h2>Asisten Solusi Harian</h2>
-        <p>Pilih kondisi Anda saat ini untuk mendapatkan saran kegiatan terbaik:</p>
-
-        <label for="moodSelect">Kondisi / Mood Anda:</label>
-        <select id="moodSelect">
-          <option value="" disabled selected>-- Pilih Kondisi --</option>
-          <option value="lelah">😴 Lelah / Butuh Istirahat</option>
-          <option value="produktif">🔥 Semangat & Produktif</option>
-          <option value="bosan">🥱 Bosan / Jenuh</option>
-          <option value="stres">🤯 Stres / Banyak Pikiran</option>
-        </select>
-
-        <button class="btn-primary" onclick="dapatkanSaranAI()">Minta Rekomendasi AI</button>
-
-        <div id="aiResult" class="result-box hidden">
-          <h3 id="resultTitle">Rekomendasi AI:</h3>
-          <p id="resultText">-</p>
+            <div class="hidden md:flex items-center space-x-4">
+                <button class="bg-yellow-400 hover:bg-yellow-300 text-indigo-950 font-semibold px-4 py-2 rounded-lg text-sm shadow transition-all">
+                    Masuk / Daftar
+                </button>
+            </div>
         </div>
-      </div>
+    </header>
 
-      <section class="features">
-    <div class="container">
-        <h2>Yuk Kami Bantu!</h2>
-        <div class="feature-grid">
-            <div class="feature-box">
-                <h3>Jadwal Harian</h3>
-                <p>menyusun jadwal harian Anda secara otomatis.</p>
-            </div>
-            <div class="feature-box">
-                <h3>Tips Makanan Dengan Nutrisi</h3>
-                <p>Rekomendasi menu makanan harian dengan mudah.</p>
-            </div>
-            <div class="feature-box">
-                <h3>Mau Melakukan Apa Hari Ini?</h3>
-                <p>Catat dan kelola pengeluaran harian lewat AI.</p>
-            </div>
-
-      <div class="card">
-        <h2>Daftar Kegiatan Harian</h2>
-        <div class="input-group">
-          <input type="text" id="taskInput" placeholder="Tambah kegiatan baru...">
-          <button onclick="tambahTugas()">Tambah</button>
+    <section class="bg-gradient-to-br from-indigo-600 to-indigo-800 text-white py-16 px-4 text-center relative overflow-hidden">
+        <div class="max-w-3xl mx-auto relative z-10">
+            <span class="inline-block bg-indigo-500/50 text-yellow-300 text-xs uppercase px-3 py-1 rounded-full font-semibold tracking-wider mb-4 border border-indigo-400">
+                Solusi Pinter, Belajar Tanpa Muter-Muter 🚀
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+                Kuasai Materi SMA Lebih Cepat & Menyenangkan
+            </h1>
+            <p class="text-indigo-100 text-base md:text-lg mb-8">
+                Rangkuman materi praktis, latihan soal interaktif, dan penjadwalan belajar harian!
+            </p>
         </div>
+      </section>
+
+    <!-- MODUL MATERI SECTION -->
+    <section id="materi" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Modul Belajar SMA</h2>
+            <p class="text-slate-600 mt-1">Pilih kelas dan mata pelajaran yang ingin kamu pelajari</p>
+            
+            <!-- Filter Kelas -->
+            <div class="flex justify-center space-x-2 mt-6">
+                <button onclick="filterKelas('all')" class="btn-kelas bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-medium shadow-sm transition-all">Semua</button>
+                <button onclick="filterKelas('10')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas X</button>
+                <button onclick="filterKelas('11')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas XI</button>
+                <button onclick="filterKelas('12')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas XII</button>
+            </div>
+        </div>
+
+        <!-- Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="materi-grid">
+            
+            <!-- Card 1 -->
+            <div class="materi-card kelas-10 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kelas 10</span>
+                        <span class="text-xs text-slate-400">Matematika</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Persamaan & Pertidaksamaan Eksponen</h3>
+                    <p class="text-slate-600 text-sm mb-4">Memahami sifat-sifat eksponen, bentuk akar, dan penyelesaian persamaan logaritma sederhana.</p>
+                </div>
+                <button onclick="openModal('Persamaan & Pertidaksamaan Eksponen', 'Kelas 10 - Matematika', 'Eksponen merupakan perkalian berulang dari suatu bilangan yang sama. Sifat dasar: a^m × a^n = a^(m+n).', '1. a^m · a^n = a^(m+n)\n2. (a^m)^n = a^(m·n)\n3. a^0 = 1 (a ≠ 0)', 'Perhatikan basis bilangan. Jika basis di kedua sisi sama, langsung samakan nilai pangkatnya!')" class="w-full bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-medium py-2 rounded-xl text-sm transition-colors flex items-center justify-center space-x-2">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    <span>Lihat Ringkasan</span>
+                </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="materi-card kelas-11 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kelas 11</span>
+                        <span class="text-xs text-slate-400">Fisika</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Dinamika Rotasi & Momen Inersia</h3>
+                    <p class="text-slate-600 text-sm mb-4">Konsep torsi, momen inersia pada benda tegar, serta hukum kekekalan momentum sudut.</p>
+                </div>
+                <button onclick="openModal('Dinamika Rotasi & Momen Inersia', 'Kelas 11 - Fisika', 'Dinamika rotasi mempelajari sebab terjadinya gerak melingkar/rotasi. Penyebab benda berotasi adalah Torsi (momen gaya).', '1. Torsi (τ) = F × r × sin(θ)\n2. Momen Inersia (I) = m × r²\n3. Hukum II Newton Rotasi: Στ = I × α', 'Jangan tertukar antara jarak lintasan (s) dengan jari-jari rotasi (r). Momen inersia tergantung pada bentuk benda!')" class="w-full bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-medium py-2 rounded-xl text-sm transition-colors flex items-center justify-center space-x-2">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    <span>Lihat Ringkasan</span>
+                </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="materi-card kelas-12 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kelas 12</span>
+                        <span class="text-xs text-slate-400">Biologi</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Metabolisme Sel: Anabolisme & Katabolisme</h3>
+                    <p class="text-slate-600 text-sm mb-4">Penjelasan respirasi aerob/anaerob, tahapan glikolisis, siklus krebs, serta fotosintesis.</p>
+                </div>
+                <button onclick="openModal('Metabolisme Sel', 'Kelas 12 - Biologi', 'Metabolisme adalah seluruh reaksi kimia dalam sel. Dibagi dua: Katabolisme (pemecahan molekul) dan Anabolisme (penyusunan molekul).', '1. Katabolisme: Respirasi Aerob menghasilkan 36/38 ATP\n2. Tahap Aerob: Glikolisis -> Dekarboksilasi Oksidatif -> Siklus Krebs -> Transpor Elektron\n3. Anabolisme: Fotosintesis (Reaksi Terang & Gelap)', 'Hafalkan lokasi terjadinya: Glikolisis di sitosol, Siklus Krebs di matriks mitokondria, Transpor elektron di krista mitokondria.')" class="w-full bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-medium py-2 rounded-xl text-sm transition-colors flex items-center justify-center space-x-2">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    <span>Lihat Ringkasan</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- STUDY PLANNER & POMODORO TIMER -->
+    <section id="planner" class="bg-slate-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Study Planner & Timer Belajar</h2>
+                <p class="text-slate-600 mt-1">Atur jadwal PR dan jaga fokus belajar dengan metode Pomodoro</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Pomodoro Timer Card -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
+                    <div class="flex items-center space-x-2 text-indigo-600 mb-2">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                        <span class="font-semibold text-sm uppercase tracking-wider">Timer Pomodoro</span>
+                    </div>
+                    <div id="timer-display" class="text-5xl md:text-6xl font-extrabold text-slate-800 my-4 tracking-widest">
+                        25:00
+                    </div>
+                    <div class="flex space-x-3 mb-4">
+                        <button id="start-btn" onclick="startTimer()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow transition-all flex items-center space-x-2">
+                            <i data-lucide="play" class="w-4 h-4"></i> <span>Mulai</span>
+                        </button>
+                        <button id="pause-btn" onclick="pauseTimer()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-medium px-6 py-2.5 rounded-xl transition-all flex items-center space-x-2">
+                            <i data-lucide="pause" class="w-4 h-4"></i> <span>Jeda</span>
+                        </button>
+                        <button onclick="resetTimer()" class="bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium px-4 py-2.5 rounded-xl transition-all">
+                            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+              
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg text-slate-800 mb-4 flex items-center space-x-2">
+                        <i data-lucide="check-square" class="w-5 h-5 text-indigo-600"></i>
+                        <span>Target Belajar & PR Hari Ini</span>
+                    </h3>
+                    
+                    <div class="flex space-x-2 mb-4">
+                        <input type="text" id="todo-input" placeholder="Tambah target..." class="flex-1 px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="addTodo()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors">
+                            Tambah
+                        </button>
+                    </div>
+
+                    <ul id="todo-list" class="space-y-2 max-h-48 overflow-y-auto">
+                        <li class="flex items-center justify-between p-3 bg-slate-50 rounded-xl text-sm">
+                            <span class="text-slate-700">Ringkasan Sosiologi Bab 2</span>
+                            <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                        </li>
+                    </ul>
+        </div>
+    </section>
+    
+    <div id="summary-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="closeModal()" class="absolute right-4 top-4 text-slate-400 hover:text-slate-600 p-1">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+</div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
+ 
