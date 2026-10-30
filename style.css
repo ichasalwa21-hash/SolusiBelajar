@@ -1,170 +1,23 @@
-
-:root {
-  --bg-color: #0f172a;
-  --card-bg: #1e293b;
-  --text-color: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-color: #3b82f6;
-  --border-color: #334155;
-}
-
-body.light-theme {
-  --bg-color: #f1f5f9;
-  --card-bg: #ffffff;
-  --text-color: #0f172a;
-  --text-secondary: #64748b;
-  --accent-color: #2563eb;
-  --border-color: #e2e8f0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 20px;
-  transition: background-color 0.3s, color 0.3s;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-.container {
-  max-width: 500px;
-  margin: 0 auto;
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
 }
 
-.header h1 {
-  font-size: 1.4rem;
-  margin: 0;
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
 }
 
-#themeToggle {
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  background: var(--card-bg);
-  color: var(--text-color);
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-
-/* Kartu / Kotak Konten */
-.card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.card h2 {
-  margin-top: 0;
-  font-size: 1.2rem;
-}
-
-.card p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  font-size: 0.9rem;
-}
-
-select, input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  box-sizing: border-box;
-  margin-bottom: 15px;
-}
-
-.btn-primary {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  background-color: var(--accent-color);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.result-box {
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 8px;
-  background-color: var(--bg-color);
-  border-left: 4px solid var(--accent-color);
-}
-
-.result-box.hidden {
-  display: none;
-}
-
-.result-box h3 {
-  margin: 0 0 5px 0;
-  font-size: 1rem;
-}
-
-.result-box p {
-  margin: 0;
-}
-
-/* Daftar Tugas */
-.input-group {
-  display: flex;
-  gap: 8px;
-}
-
-.input-group input {
-  margin-bottom: 0;
-}
-
-.input-group button {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  background-color: var(--accent-color);
-  color: white;
-  cursor: pointer;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 15px;
-}
-
-li {
-  padding: 8px 12px;
-  background-color: var(--bg-color);
-  border-radius: 6px;
-  margin-bottom: 6px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-li button {
-  background: transparent;
-  border: none;
-  color: #ef4444;
-  cursor: pointer;
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }
