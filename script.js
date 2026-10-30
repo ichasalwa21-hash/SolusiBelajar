@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.lucide) {
+window.addEventListener('DOMContentLoaded', () => {
+    if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 });
-
 function openModal(title, badge, concept, formula, tips) {
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-badge').innerText = badge;
