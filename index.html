@@ -13,61 +13,27 @@
 </head>
 <body class="text-slate-800 flex flex-col min-h-screen">
 
-    
-    <header class="header-gradient text-white sticky top-0 z-40 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <div class="flex items-center space-x-2">
-                <i data-lucide="book-open" class="w-8 h-8 text-yellow-300"></i>
-                <span class="font-bold text-xl tracking-tight">SolusiBelajar</span>
-            </div>
-            
-            <nav class="hidden md:flex space-x-8 font-medium">
-                <a href="#materi" class="hover:text-yellow-300 transition-colors">Materi SMA</a>
-                <a href="#planner" class="hover:text-yellow-300 transition-colors">Study Planner</a>
-            </nav>
-
-            <div class="hidden md:flex items-center space-x-4">
-                <button class="btn-gradient text-indigo-950 font-semibold px-4 py-2 rounded-lg text-sm shadow">
-                    Masuk / Daftar
-                </button>
-            </div>
-        </div>
-    </header>
-
-    
-    <section class="hero-gradient text-white py-16 px-4 text-center relative overflow-hidden">
-        <div class="max-w-3xl mx-auto relative z-10">
-            <span class="inline-block bg-white/10 backdrop-blur-md text-yellow-300 text-xs uppercase px-3 py-1 rounded-full font-semibold tracking-wider mb-4 border border-white/20">
-                Solusi Pinter, Belajar Tanpa Muter-Muter 🚀
-            </span>
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-                Kuasai Materi SMA Lebih Cepat & Menyenangkan
-            </h1>
-            <p class="text-indigo-100 text-base md:text-lg mb-8">
-                Rangkuman materi praktis, latihan soal interaktif, dan penjadwalan belajar harian!
-            </p>
-        </div>
-    </section>
-
-   
-    <section id="materi" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
-        <div class="text-center mb-10">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Modul Belajar SMA</h2>
-            <p class="text-slate-600 mt-1">Pilih kelas dan mata pelajaran yang ingin kamu pelajari</p>
-            
-            <!-- Filter Kelas -->
-            <div class="flex justify-center space-x-2 mt-6">
-                <button onclick="filterKelas('all')" class="btn-kelas bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-medium shadow-sm transition-all">Semua</button>
-                <button onclick="filterKelas('10')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas X</button>
-                <button onclick="filterKelas('11')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas XI</button>
-                <button onclick="filterKelas('12')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas XII</button>
-            </div>
-        </div>
-
+<section id="materi" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
+    <div class="text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Modul Belajar SMA</h2>
+        <p class="text-slate-600 mt-1">Pilih kelas dan mata pelajaran yang ingin kamu pelajari</p>
         
+
+        <div class="flex justify-center space-x-2 mt-6 flex-wrap gap-y-2">
+            <button onclick="filterKelas('all')" class="btn-kelas bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-medium shadow-sm transition-all">Semua</button>
+            <button onclick="filterKelas('10')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas X</button>
+            <button onclick="filterKelas('11')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas XI</button>
+            <button onclick="filterKelas('12')" class="btn-kelas bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-5 py-2 rounded-full text-sm font-medium transition-all">Kelas XII</button>
+        </div>
+    </div>
+
+ 
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="materi-grid"></div>
+</section>
+<!-- Cards Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="materi-grid">
             
-            
+            <!-- Card 1 -->
             <div class="materi-card kelas-10 bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-6 shadow-sm relative flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -83,7 +49,7 @@
                 </button>
             </div>
 
-           
+            <!-- Card 2 -->
             <div class="materi-card kelas-11 bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-6 shadow-sm relative flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -118,7 +84,7 @@
         </div>
     </section>
 
-  
+    <!-- STUDY PLANNER & POMODORO TIMER -->
     <section id="planner" class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
@@ -127,14 +93,14 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Pomodoro Timer Card -->
+
                 <div class="card-gradient p-6 rounded-2xl border border-white/60 shadow-sm flex flex-col items-center justify-center text-center">
                     <div class="flex items-center space-x-2 text-indigo-600 mb-2">
                         <i data-lucide="clock" class="w-5 h-5"></i>
                         <span class="font-semibold text-sm uppercase tracking-wider">Timer Pomodoro</span>
                     </div>
                     <div id="timer-display" class="text-5xl md:text-6xl font-extrabold text-slate-800 my-4 tracking-widest">
-                        25:00
+                        60:00
                     </div>
                     <div class="flex space-x-3 mb-4">
                         <button id="start-btn" onclick="startTimer()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-2.5 rounded-xl shadow transition-all flex items-center space-x-2">
@@ -149,7 +115,6 @@
                     </div>
                 </div>
 
-         
                 <div class="card-gradient p-6 rounded-2xl border border-white/60 shadow-sm">
                     <h3 class="font-bold text-lg text-slate-800 mb-4 flex items-center space-x-2">
                         <i data-lucide="check-square" class="w-5 h-5 text-indigo-600"></i>
