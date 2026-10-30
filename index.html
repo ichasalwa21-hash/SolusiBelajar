@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-  <html lang="id">
-    <head>
-      <meta charset= "UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IF=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>SolusiBelajar</title>
-<link rel="stylesheet" href="style.css">
-  </head>
-  <body class="dark-theme">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolusiBelajar - Platform Belajar SMA Interaktif</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen">
 
-    <header class="bg-indigo-600 text-white sticky top-0 z-40 shadow-md">
+    
+    <header class="header-gradient text-white sticky top-0 z-40 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
             <div class="flex items-center space-x-2">
                 <i data-lucide="book-open" class="w-8 h-8 text-yellow-300"></i>
@@ -19,20 +24,20 @@
             <nav class="hidden md:flex space-x-8 font-medium">
                 <a href="#materi" class="hover:text-yellow-300 transition-colors">Materi SMA</a>
                 <a href="#planner" class="hover:text-yellow-300 transition-colors">Study Planner</a>
-                <a href="#kuis" class="hover:text-yellow-300 transition-colors">Bank Soal</a>
             </nav>
 
             <div class="hidden md:flex items-center space-x-4">
-                <button class="bg-yellow-400 hover:bg-yellow-300 text-indigo-950 font-semibold px-4 py-2 rounded-lg text-sm shadow transition-all">
+                <button class="btn-gradient text-indigo-950 font-semibold px-4 py-2 rounded-lg text-sm shadow">
                     Masuk / Daftar
                 </button>
             </div>
         </div>
     </header>
 
-    <section class="bg-gradient-to-br from-indigo-600 to-indigo-800 text-white py-16 px-4 text-center relative overflow-hidden">
+    
+    <section class="hero-gradient text-white py-16 px-4 text-center relative overflow-hidden">
         <div class="max-w-3xl mx-auto relative z-10">
-            <span class="inline-block bg-indigo-500/50 text-yellow-300 text-xs uppercase px-3 py-1 rounded-full font-semibold tracking-wider mb-4 border border-indigo-400">
+            <span class="inline-block bg-white/10 backdrop-blur-md text-yellow-300 text-xs uppercase px-3 py-1 rounded-full font-semibold tracking-wider mb-4 border border-white/20">
                 Solusi Pinter, Belajar Tanpa Muter-Muter 🚀
             </span>
             <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
@@ -42,9 +47,9 @@
                 Rangkuman materi praktis, latihan soal interaktif, dan penjadwalan belajar harian!
             </p>
         </div>
-      </section>
+    </section>
 
-    <!-- MODUL MATERI SECTION -->
+   
     <section id="materi" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
         <div class="text-center mb-10">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Modul Belajar SMA</h2>
@@ -59,11 +64,11 @@
             </div>
         </div>
 
-        <!-- Cards Container -->
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="materi-grid">
             
-            <!-- Card 1 -->
-            <div class="materi-card kelas-10 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+            
+            <div class="materi-card kelas-10 bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-6 shadow-sm relative flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-3">
                         <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kelas 10</span>
@@ -78,8 +83,8 @@
                 </button>
             </div>
 
-            <!-- Card 2 -->
-            <div class="materi-card kelas-11 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+           
+            <div class="materi-card kelas-11 bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-6 shadow-sm relative flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-3">
                         <span class="bg-emerald-100 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kelas 11</span>
@@ -95,7 +100,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="materi-card kelas-12 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+            <div class="materi-card kelas-12 bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-6 shadow-sm relative flex flex-col justify-between">
                 <div>
                     <div class="flex justify-between items-center mb-3">
                         <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kelas 12</span>
@@ -113,8 +118,8 @@
         </div>
     </section>
 
-    <!-- STUDY PLANNER & POMODORO TIMER -->
-    <section id="planner" class="bg-slate-100 py-12">
+  
+    <section id="planner" class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Study Planner & Timer Belajar</h2>
@@ -123,7 +128,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Pomodoro Timer Card -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
+                <div class="card-gradient p-6 rounded-2xl border border-white/60 shadow-sm flex flex-col items-center justify-center text-center">
                     <div class="flex items-center space-x-2 text-indigo-600 mb-2">
                         <i data-lucide="clock" class="w-5 h-5"></i>
                         <span class="font-semibold text-sm uppercase tracking-wider">Timer Pomodoro</span>
@@ -143,38 +148,75 @@
                         </button>
                     </div>
                 </div>
-              
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+
+         
+                <div class="card-gradient p-6 rounded-2xl border border-white/60 shadow-sm">
                     <h3 class="font-bold text-lg text-slate-800 mb-4 flex items-center space-x-2">
                         <i data-lucide="check-square" class="w-5 h-5 text-indigo-600"></i>
                         <span>Target Belajar & PR Hari Ini</span>
                     </h3>
                     
                     <div class="flex space-x-2 mb-4">
-                        <input type="text" id="todo-input" placeholder="Tambah target..." class="flex-1 px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <input type="text" id="todo-input" placeholder="Tambah target..." class="flex-1 px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white/90">
                         <button onclick="addTodo()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors">
                             Tambah
                         </button>
                     </div>
 
                     <ul id="todo-list" class="space-y-2 max-h-48 overflow-y-auto">
-                        <li class="flex items-center justify-between p-3 bg-slate-50 rounded-xl text-sm">
+                        <li class="flex items-center justify-between p-3 bg-white/90 rounded-xl text-sm border border-slate-100">
                             <span class="text-slate-700">Ringkasan Sosiologi Bab 2</span>
                             <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
                         </li>
                     </ul>
+                </div>
+            </div>
         </div>
     </section>
-    
+
     <div id="summary-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            
             <button onclick="closeModal()" class="absolute right-4 top-4 text-slate-400 hover:text-slate-600 p-1">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-</div>
+
+            <span id="modal-badge" class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-2.5 py-1 rounded-md">Kelas 10</span>
+            <h3 id="modal-title" class="font-bold text-xl text-slate-800 mt-2 mb-4">Judul Materi</h3>
+
+            <div class="space-y-4 text-sm text-slate-600">
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                    <h4 class="font-bold text-slate-800 mb-1 flex items-center space-x-1">
+                        <i data-lucide="info" class="w-4 h-4 text-indigo-600"></i>
+                        <span>Konsep Utama</span>
+                    </h4>
+                    <p id="modal-concept">Penjelasan konsep utama materi.</p>
+                </div>
+
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                    <h4 class="font-bold text-slate-800 mb-1 flex items-center space-x-1">
+                        <i data-lucide="bookmark" class="w-4 h-4 text-indigo-600"></i>
+                        <span>Rumus / Poin Penting</span>
+                    </h4>
+                    <p id="modal-formula" class="whitespace-pre-line font-mono text-xs bg-white p-2 rounded border border-slate-200 text-slate-800">Rumus...</p>
+                </div>
+
+                <div class="p-3 bg-amber-50 rounded-xl border border-amber-100 text-amber-900">
+                    <h4 class="font-bold mb-1 flex items-center space-x-1">
+                        <i data-lucide="zap" class="w-4 h-4 text-amber-600"></i>
+                        <span>Tips Ujian & Cara Cepat</span>
+                    </h4>
+                    <p id="modal-tips">Tips mudah mengingat materi.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 flex space-x-3">
+                <button onclick="closeModal()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-xl text-sm transition-colors">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
- 
